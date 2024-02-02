@@ -1,0 +1,16 @@
+#main Makefile
+
+main: mainA.o SevenSegment.o DE1SoCfpga.o
+	g++ mainA.o SevenSegment.o DE1SoCfpga.o -o segment
+
+main.o: mainA.cpp
+	g++ -c mainA.cpp
+
+SevenSegment.o: SevenSegment.cpp SevenSegment.h
+	g++ -c SevenSegment.cpp
+
+DE1SoCfpga.o: DE1SoCfpga.cpp DE1SoCfpga.h
+	g++ -c DE1SoCfpga.cpp
+
+clean:
+	rm mainA.o SevenSegment.o DE1SoCfpga.o
